@@ -1,5 +1,4 @@
 
-
 export interface UserState {
 	users: any[];
 	loading: Boolean;

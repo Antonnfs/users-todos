@@ -1,5 +1,6 @@
 import { applyMiddleware, legacy_createStore as createStore } from "redux";
-import { ThunkAction } from 'redux-thunk';
+import thunk from 'redux-thunk';
+import { userReducer } from "./reducers/userReducer";
 
 
-export const store = createStore({}, applyMiddleware(ThunkAction))
+export const store = createStore(userReducer, applyMiddleware(thunk))

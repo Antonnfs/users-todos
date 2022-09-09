@@ -1,9 +1,9 @@
 export interface TodoState {
 	todos: any[];
-	loading: Boolean;
-	error: null | String;
-	page: Number;
-	limit: Number;
+	loading: boolean;
+	error: null | string;
+	page: number;
+	limit: number;
 }
 export enum TodoActionTypes {
 	FETCH_TODOS = 'FETCH_TODOS',
@@ -20,10 +20,10 @@ interface FetchTodoSuccessAction {
 }
 interface FetchTodoErrorAction {
 	type: TodoActionTypes.FETCH_TODOS_ERROR;
-	payload: String;
+	payload: string;
 }
 interface SetTodoPage {
 	type: TodoActionTypes.SET_TODO_PAGE;
-	payload: Number;
+	payload: number;
 }
 export type TodoAction = FetchTodoAction | FetchTodoSuccessAction | FetchTodoErrorAction | SetTodoPage;

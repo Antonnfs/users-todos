@@ -11,10 +11,14 @@ export const TodoList: React.FC = () => {
 	}, [page])
 	
 	if (loading) {
-		return <h1>Loading... Please wait...</h1>
+		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>
+				Loading... Please wait...
+			</h1>
 	}
 	if (error) {
-		return <h1>{error}</h1>
+		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>
+				{error}
+			</h1>
 	}
 	return  (
 		<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>

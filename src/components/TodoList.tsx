@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAction } from '../hooks/useAction';
 import { useTypedSelector } from '../hooks/useTypedSelector'
 
 export const TodoList: React.FC = () => {
 	const {todos, page, error, loading, limit} = useTypedSelector(state => state.todo);
 	const { fetchTodos, setTodoPage} = useAction();
-	const pages = [];
-	for(let i = 1; i < Math.round(todos.length / 10); i++) {
-		pages.push(i)
+	const [pages, setPages] = useState<number[]>([1]);
+	const countPages = todos.length / 10;
+	for (let i = 1; i < countPages; i++) {
+		setPages([...pages, i])
+		
 	}
+	console.log(pages);
+
 	useEffect(() => {
 		fetchTodos(page, limit)
-	}, [page])
+	}, [page, pages])
 	
 	if (loading) {
 		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>

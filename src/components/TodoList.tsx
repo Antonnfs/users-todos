@@ -5,7 +5,10 @@ import { useTypedSelector } from '../hooks/useTypedSelector'
 export const TodoList: React.FC = () => {
 	const {todos, page, error, loading, limit} = useTypedSelector(state => state.todo);
 	const { fetchTodos, setTodoPage} = useAction();
-	const pages = [1, 2, 3, 4, 5];
+	const pages = [];
+	for(let i = 1; i < Math.round(todos.length / 10); i++) {
+		pages.push(i)
+	}
 	useEffect(() => {
 		fetchTodos(page, limit)
 	}, [page])

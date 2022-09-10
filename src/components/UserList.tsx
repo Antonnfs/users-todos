@@ -10,12 +10,12 @@ export const UserList: React.FC = () => {
 		fetchUsers()
 	}, [])
 	if (loading) {
-		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>
+		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30}}>
 				Loading... Please wait...
 			</h1>
 	}
 	if (error) {
-		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30, }}>
+		return <h1 style={{display: 'flex', flexDirection: 'column', alignItems: 'center', margin: 30}}>
 				{error}
 			</h1>
 	}

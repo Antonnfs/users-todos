@@ -1,7 +1,6 @@
 import React from 'react'
 import { TodoList } from './components/TodoList'
 import { UserList } from './components/UserList'
-import { useTypedSelector } from './hooks/useTypedSelector'
 
 export default function App() {
   
